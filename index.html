@@ -22,78 +22,48 @@ html, body {
 
 /* CONTAINER PRINCIPAL */
 .container {
-    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0b0f1a;
-    padding: 2%;
 }
 
-/* IMAGEM CINEMÁTICA */
-.container img {
+/* WRAPPER DA IMAGEM (REFERÊNCIA REAL) */
+.image-wrapper {
+    position: relative;
     max-width: 96%;
     max-height: 96%;
-    width: auto;
+}
+
+/* IMAGEM */
+.image-wrapper img {
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* ÁREA DOS BOTÕES INVISÍVEIS - ALINHADOS */
+/* BOTÕES INVISÍVEIS (RELATIVOS À IMAGEM) */
 .actions {
     position: absolute;
-    bottom: 22%; /* subindo para alinhar com os botões da imagem */
     left: 50%;
     transform: translateX(-50%);
-    width: 85%;
-    max-width: 420px;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
+
+    /* 🔥 AJUSTE FINO AQUI 🔥
+       Esses valores são baseados NA IMAGEM */
+    bottom: 14%;
 }
 
-/* BOTÕES INVISÍVEIS FUNCIONAIS */
+/* BOTÕES */
 .action-btn {
     width: 100%;
     height: 70px;
     border-radius: 16px;
-    background: rgba(0,0,0,0); /* invisível */
-    text-indent: -9999px; /* esconde o texto */
-    cursor: pointer;
-}
+    background: rgba(0,0,0,0);
 
-/* AJUSTE PARA TELAS PEQUENAS */
-@media (max-height: 700px) {
-    .actions {
-        bottom: 20%; /* ajusta proporcionalmente em telas pequenas */
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <!-- IMAGEM CINEMÁTICA -->
-    <img src="newtruck.png" alt="Oliveira Diesel S.O.S 24H">
-
-    <!-- BOTÕES INVISÍVEIS -->
-    <div class="actions">
-        <a class="action-btn" href="tel:5511964052649">
-            Ligar agora
-        </a>
-
-        <a class="action-btn" href="https://wa.me/5511964052649" target="_blank">
-            WhatsApp
-        </a>
-    </div>
-
-</div>
-
-</body>
-</html>
