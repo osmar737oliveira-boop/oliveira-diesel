@@ -28,49 +28,54 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0b0f1a; /* fundo escuro para bordas */
-    padding: 2%; /* garante margem mínima */
+    background: #0b0f1a;
+    padding: 2%;
 }
 
 /* IMAGEM CINEMÁTICA */
 .container img {
-    max-width: 96%;      /* ligeira margem horizontal */
-    max-height: 96%;     /* ligeira margem vertical */
+    max-width: 96%;
+    max-height: 96%;
     width: auto;
     height: auto;
     display: block;
-    border-radius: 8px;  /* leve arredondamento */
-    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* sombra escura ao redor */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* ÁREA DOS BOTÕES */
+/* ÁREA DOS BOTÕES INVISÍVEIS - RESPONSIVO */
 .actions {
     position: absolute;
-    bottom: 5%;
+    bottom: 12vh; /* posição relativa à altura da tela */
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
     max-width: 420px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 3vh; /* espaçamento relativo à tela */
 }
 
 /* BOTÕES INVISÍVEIS FUNCIONAIS */
 .action-btn {
     width: 100%;
-    height: 70px;
+    height: 7vh; /* altura relativa à tela */
     border-radius: 16px;
     background: rgba(0,0,0,0);
     text-indent: -9999px;
 }
 
-/* Ajuste para telas muito pequenas */
+/* AJUSTE PARA TELAS PEQUENAS */
 @media (max-height: 700px) {
     .actions {
-        bottom: 3%;
+        bottom: 10vh;
+        gap: 2.5vh;
+    }
+    .action-btn {
+        height: 6.5vh;
     }
 }
+
 </style>
 </head>
 
@@ -81,7 +86,7 @@ html, body {
     <!-- IMAGEM CINEMÁTICA -->
     <img src="newtruck.png" alt="Oliveira Diesel S.O.S 24H">
 
-    <!-- BOTÕES -->
+    <!-- BOTÕES INVISÍVEIS -->
     <div class="actions">
         <a class="action-btn" href="tel:5511964052649">
             Ligar agora
