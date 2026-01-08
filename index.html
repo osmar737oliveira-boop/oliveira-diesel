@@ -17,7 +17,7 @@ html, body {
     height: 100%;
     background: #0b0f1a;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* previne scroll */
+    overflow: hidden;
 }
 
 /* CONTAINER PRINCIPAL */
@@ -27,14 +27,16 @@ html, body {
     height: 100%;
 }
 
-/* IMAGEM ÚNICA — FULLSCREEN */
+/* IMAGEM ÚNICA — FULLSCREEN AJUSTADA */
 .container img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* cobre toda a tela mantendo proporção */
+    top: 50%;
+    left: 50%;
+    width: 95%;        /* reduzir para não cortar bordas */
+    height: auto;      /* mantém proporção */
+    max-height: 95%;   /* limita altura também */
+    transform: translate(-50%, -50%);
+    object-fit: contain; /* garante que toda a imagem seja visível */
 }
 
 /* ÁREA DOS BOTÕES */
@@ -90,3 +92,4 @@ html, body {
 
 </body>
 </html>
+
