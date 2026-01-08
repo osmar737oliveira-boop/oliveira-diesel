@@ -15,9 +15,6 @@
 html, body {
     width: 100%;
     height: 100%;
-}
-
-body {
     background: #0b0f1a;
     font-family: Arial, sans-serif;
 }
@@ -27,18 +24,18 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('newtruck.png') center center / cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
-/* IMAGEM CENTRAL (SEM CORTAR) */
+/* IMAGEM ÚNICA — FULLSCREEN */
 .container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* 🔥 NÃO corta bordas */
-    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* preenche a tela */
 }
 
 /* ÁREA DOS BOTÕES */
@@ -48,6 +45,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -55,7 +53,6 @@ body {
 
 /* BOTÕES INVISÍVEIS FUNCIONAIS */
 .action-btn {
-    display: block;
     width: 100%;
     height: 70px;
     border-radius: 16px;
@@ -63,7 +60,7 @@ body {
     text-indent: -9999px;
 }
 
-/* Ajuste para telas mais baixas */
+/* Ajuste para telas menores */
 @media (max-height: 700px) {
     .actions {
         bottom: 5%;
@@ -75,7 +72,8 @@ body {
 <body>
 
 <div class="container">
-    <!-- IMAGEM SEM CORTAR -->
+
+    <!-- IMAGEM ÚNICA -->
     <img src="newtruck.png" alt="Oliveira Diesel S.O.S 24H">
 
     <!-- BOTÕES -->
@@ -88,8 +86,8 @@ body {
             WhatsApp
         </a>
     </div>
+
 </div>
 
 </body>
 </html>
-
