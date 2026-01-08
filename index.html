@@ -26,19 +26,22 @@ body {
 .container {
     position: relative;
     width: 100%;
-    height: 100vh; /* ocupa a tela inteira */
-    overflow: hidden;
+    height: 100vh;
+    background: url('newtruck.png') center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* IMAGEM DE FUNDO */
+/* IMAGEM CENTRAL (SEM CORTAR) */
 .container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 🔥 ISSO resolve o problema do celular */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 🔥 NÃO corta bordas */
     display: block;
 }
 
-/* ÁREA DOS BOTÕES (INVISÍVEL) */
+/* ÁREA DOS BOTÕES */
 .actions {
     position: absolute;
     bottom: 7%;
@@ -50,7 +53,7 @@ body {
     gap: 16px;
 }
 
-/* BOTÕES REAIS (TRANSPARENTES) */
+/* BOTÕES INVISÍVEIS FUNCIONAIS */
 .action-btn {
     display: block;
     width: 100%;
@@ -60,7 +63,7 @@ body {
     text-indent: -9999px;
 }
 
-/* Ajuste para telas muito baixas */
+/* Ajuste para telas mais baixas */
 @media (max-height: 700px) {
     .actions {
         bottom: 5%;
@@ -72,10 +75,10 @@ body {
 <body>
 
 <div class="container">
-    <!-- IMAGEM PRINCIPAL -->
+    <!-- IMAGEM SEM CORTAR -->
     <img src="newtruck.png" alt="Oliveira Diesel S.O.S 24H">
 
-    <!-- BOTÕES FUNCIONAIS -->
+    <!-- BOTÕES -->
     <div class="actions">
         <a class="action-btn" href="tel:5511964052649">
             Ligar agora
