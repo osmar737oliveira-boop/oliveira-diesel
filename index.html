@@ -43,39 +43,35 @@ html, body {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* ÁREA DOS BOTÕES INVISÍVEIS - RESPONSIVO */
+/* ÁREA DOS BOTÕES INVISÍVEIS - ALINHADOS */
 .actions {
     position: absolute;
-    bottom: 12vh; /* posição relativa à altura da tela */
+    bottom: 22%; /* subindo para alinhar com os botões da imagem */
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
     max-width: 420px;
     display: flex;
     flex-direction: column;
-    gap: 3vh; /* espaçamento relativo à tela */
+    gap: 16px;
 }
 
 /* BOTÕES INVISÍVEIS FUNCIONAIS */
 .action-btn {
     width: 100%;
-    height: 7vh; /* altura relativa à tela */
+    height: 70px;
     border-radius: 16px;
-    background: rgba(0,0,0,0);
-    text-indent: -9999px;
+    background: rgba(0,0,0,0); /* invisível */
+    text-indent: -9999px; /* esconde o texto */
+    cursor: pointer;
 }
 
 /* AJUSTE PARA TELAS PEQUENAS */
 @media (max-height: 700px) {
     .actions {
-        bottom: 10vh;
-        gap: 2.5vh;
-    }
-    .action-btn {
-        height: 6.5vh;
+        bottom: 20%; /* ajusta proporcionalmente em telas pequenas */
     }
 }
-
 </style>
 </head>
 
@@ -101,4 +97,3 @@ html, body {
 
 </body>
 </html>
-
