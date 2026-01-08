@@ -12,12 +12,13 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     background: #0b0f1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     font-family: Arial, sans-serif;
 }
 
@@ -25,43 +26,44 @@ body {
 .container {
     position: relative;
     width: 100%;
-    max-width: 430px; /* padrão celular */
+    height: 100vh; /* ocupa a tela inteira */
+    overflow: hidden;
 }
 
-/* IMAGEM PREMIUM */
+/* IMAGEM DE FUNDO */
 .container img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* 🔥 ISSO resolve o problema do celular */
     display: block;
-    border-radius: 12px;
 }
 
 /* ÁREA DOS BOTÕES (INVISÍVEL) */
 .actions {
     position: absolute;
-    bottom: 6%;
+    bottom: 7%;
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 /* BOTÕES REAIS (TRANSPARENTES) */
 .action-btn {
     display: block;
     width: 100%;
-    height: 64px;
-    border-radius: 14px;
+    height: 70px;
+    border-radius: 16px;
     background: rgba(0,0,0,0);
     text-indent: -9999px;
 }
 
-/* Ajuste fino para celulares muito pequenos */
+/* Ajuste para telas muito baixas */
 @media (max-height: 700px) {
     .actions {
-        bottom: 4%;
+        bottom: 5%;
     }
 }
 </style>
@@ -70,23 +72,21 @@ body {
 <body>
 
 <div class="container">
-    <!-- IMAGEM -->
+    <!-- IMAGEM PRINCIPAL -->
     <img src="newtruck.png" alt="Oliveira Diesel S.O.S 24H">
 
     <!-- BOTÕES FUNCIONAIS -->
     <div class="actions">
-        <a class="action-btn"
-           href="tel:5511964052649">
-           Ligar agora
+        <a class="action-btn" href="tel:5511964052649">
+            Ligar agora
         </a>
 
-        <a class="action-btn"
-           href="https://wa.me/5511964052649"
-           target="_blank">
-           WhatsApp
+        <a class="action-btn" href="https://wa.me/5511964052649" target="_blank">
+            WhatsApp
         </a>
     </div>
 </div>
 
 </body>
 </html>
+
