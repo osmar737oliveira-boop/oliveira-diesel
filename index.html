@@ -15,49 +15,38 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: #0b0f1a;
-    font-family: Arial, sans-serif;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 /* CONTAINER PRINCIPAL */
 .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* WRAPPER DA IMAGEM (REFERÊNCIA REAL) */
-.image-wrapper {
     position: relative;
-    max-width: 96%;
-    max-height: 96%;
+    width: 100vw;
+    height: 100vh;
+
+    /* 🔥 IMAGEM OCUPA 100% DA TELA 🔥 */
+    background-image: url("newtruck.png");
+    background-size: contain;   /* NÃO corta */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0b0f1a;
 }
 
-/* IMAGEM */
-.image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-/* BOTÕES INVISÍVEIS (RELATIVOS À IMAGEM) */
+/* BOTÕES INVISÍVEIS (POSIÇÃO EXATA SOBRE A ARTE) */
 .actions {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+    max-width: 420px;
+
     display: flex;
     flex-direction: column;
     gap: 18px;
 
-    /* 🔥 AJUSTE FINO AQUI 🔥
-       Esses valores são baseados NA IMAGEM */
-    bottom: 14%;
+    /* 🔧 AJUSTE FINO FINAL */
+    bottom: 16%;
 }
 
 /* BOTÕES */
@@ -66,4 +55,40 @@ html, body {
     height: 70px;
     border-radius: 16px;
     background: rgba(0,0,0,0);
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+/* AJUSTE PARA TELAS MUITO BAIXAS */
+@media (max-height: 700px) {
+    .actions {
+        bottom: 18%;
+    }
+
+    .action-btn {
+        height: 64px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- BOTÕES INVISÍVEIS -->
+    <div class="actions">
+        <a class="action-btn" href="tel:5511964052649">
+            Ligar agora
+        </a>
+
+        <a class="action-btn" href="https://wa.me/5511964052649" target="_blank">
+            WhatsApp
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
 
