@@ -14,65 +14,59 @@
 
 body {
     background: #0b0f14;
-    font-family: Arial, sans-serif;
-}
-
-/* Área da imagem */
-.hero {
-    width: 100%;
-    max-width: 480px;
-    height: 65vh;
-    max-height: 520px;
-    margin: 0 auto;
-    background: url('caminhao.png') no-repeat center top;
-    background-size: cover;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-}
-
-/* Área dos botões */
-.actions {
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 25px 16px 40px;
     display: flex;
-    flex-direction: column;
-    gap: 14px;
+    justify-content: center;
 }
 
-.btn {
+/* Container geral */
+.container {
+    position: relative;
     width: 100%;
-    padding: 18px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 14px;
-    text-decoration: none;
+    max-width: 480px;
 }
 
-.ligar {
-    background: #1a73e8;
+/* Imagem premium */
+.container img {
+    width: 100%;
+    display: block;
 }
 
-.whatsapp {
-    background: #25D366;
+/* Botões invisíveis */
+.btn-invisivel {
+    position: absolute;
+    left: 8%;
+    width: 84%;
+    height: 9%;
+    cursor: pointer;
+}
+
+/* Posição exata (ajustada para essa arte) */
+.btn-ligar {
+    bottom: 20%;
+}
+
+.btn-whatsapp {
+    bottom: 8%;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero"></div>
+<div class="container">
+    <img src="caminhaop.png" alt="Oliveira Diesel">
 
-<div class="actions">
-    <a class="btn ligar" href="tel:5511964052649">
-        📞 LIGAR AGORA
+    <!-- Ligar -->
+    <a 
+      class="btn-invisivel btn-ligar"
+      href="tel:5511964052649">
     </a>
 
-    <a class="btn whatsapp" href="https://wa.me/5511964052649" target="_blank">
-        💬 CHAMAR NO WHATSAPP
+    <!-- WhatsApp -->
+    <a 
+      class="btn-invisivel btn-whatsapp"
+      href="https://wa.me/5511964052649"
+      target="_blank">
     </a>
 </div>
 
