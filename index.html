@@ -6,47 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     background: #0b0f14;
     display: flex;
     justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Container geral */
 .container {
     position: relative;
     width: 100%;
-    max-width: 480px;
+    max-width: 430px;
 }
 
-/* Imagem premium */
 .container img {
     width: 100%;
+    height: auto; /* ISSO EVITA QUALQUER CORTE */
     display: block;
 }
 
 /* Botões invisíveis */
-.btn-invisivel {
+.btn-area {
     position: absolute;
-    left: 8%;
-    width: 84%;
-    height: 9%;
-    cursor: pointer;
+    left: 7%;
+    width: 86%;
+    height: 8%;
 }
 
-/* Posição exata (ajustada para essa arte) */
-.btn-ligar {
-    bottom: 20%;
+/* Ajustes de posição (em % da imagem) */
+.ligar {
+    top: 68%;
 }
 
-.btn-whatsapp {
-    bottom: 8%;
+.whatsapp {
+    top: 79%;
 }
 </style>
 </head>
@@ -54,20 +48,13 @@ body {
 <body>
 
 <div class="container">
+
     <img src="caminhaop.png" alt="Oliveira Diesel">
 
-    <!-- Ligar -->
-    <a 
-      class="btn-invisivel btn-ligar"
-      href="tel:5511964052649">
-    </a>
+    <a class="btn-area ligar" href="tel:5511964052649"></a>
 
-    <!-- WhatsApp -->
-    <a 
-      class="btn-invisivel btn-whatsapp"
-      href="https://wa.me/5511964052649"
-      target="_blank">
-    </a>
+    <a class="btn-area whatsapp" href="https://wa.me/5511964052649" target="_blank"></a>
+
 </div>
 
 </body>
