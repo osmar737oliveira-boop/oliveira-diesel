@@ -25,28 +25,30 @@ html, body {
     width: 100vw;
     height: 100vh;
 
-    /* 🔥 IMAGEM OCUPA 100% DA TELA 🔥 */
+    /* IMAGEM EM TELA CHEIA */
     background-image: url("newtruck.png");
-    background-size: contain;   /* NÃO corta */
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* não corta */
     background-color: #0b0f1a;
 }
 
-/* BOTÕES INVISÍVEIS (POSIÇÃO EXATA SOBRE A ARTE) */
+/* ============================= */
+/* BOTÕES INVISÍVEIS – AJUSTE FINO */
+/* ============================= */
 .actions {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 82%;
     max-width: 420px;
 
     display: flex;
     flex-direction: column;
     gap: 18px;
 
-    /* 🔧 AJUSTE FINO FINAL */
-    bottom: 16%;
+    /* 🎯 AJUSTE CIRÚRGICO DEFINITIVO */
+    bottom: 26%;
 }
 
 /* BOTÕES */
@@ -59,10 +61,10 @@ html, body {
     cursor: pointer;
 }
 
-/* AJUSTE PARA TELAS MUITO BAIXAS */
+/* TELAS MAIS BAIXAS (celulares menores) */
 @media (max-height: 700px) {
     .actions {
-        bottom: 18%;
+        bottom: 28%;
     }
 
     .action-btn {
@@ -91,4 +93,5 @@ html, body {
 
 </body>
 </html>
+
 
